@@ -1,9 +1,9 @@
-import Prodect from "./componentes/Prodect.js";
+import New from "./componentes/New";
 function App() {
   // return react.createElement('div',{},"hii"); 
   return(
     <div>
-      <Prodect></Prodect>
+      <New></New>
     </div>
   )
 }
