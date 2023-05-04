@@ -1,13 +1,9 @@
-import Header from './components/header/Header';
-import SubHeader from './components/header/SubHeader';
-import Productes from './components/Productes';
+import Prodect from "./componentes/Prodect.js";
 function App() {
   // return react.createElement('div',{},"hii"); 
   return(
     <div>
-      <Header></Header>
-      <SubHeader></SubHeader>
-       <Productes></Productes>
+      <Prodect></Prodect>
     </div>
   )
 }
