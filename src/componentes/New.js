@@ -2,10 +2,12 @@ import ShowList from "./ShowList";
 import { useEffect, useState } from "react";
 import Loading from "./Loa";
 import Show from "./ShowList";
-
+import Pop from "./Pop";
 function New(){
+    const [modaldata,modaldataupdate]=useState([]);
     const [data,updata]=useState([]);
     const [l,loading]=useState(true);
+    const [modal,modalupdate]=useState(false);
     useEffect(()=>{
     fetch('https://dummyjson.com/products')
     .then(k=>k.json())
@@ -15,6 +17,9 @@ function New(){
     },[])
 } 
     )
+    function modal_fun(){
+        modalupdate(!modal);
+    }
     return(
        <>
        <header>
@@ -22,11 +27,15 @@ function New(){
            <input type="text"></input>
            <h3>cart</h3>
        </header>
+       <div>{modal && <Pop 
+       fun={modal_fun}>
+        </Pop>}</div>
        <div>
          {l&&<Loading></Loading>}
-         <div class="Showlist">
+
+         <div id="Showlist">
          {data.map((e)=>{
-            return <ShowList arg={e}></ShowList>
+            return <ShowList fun={modal_fun} arg={e}></ShowList>
          })}  
          </div>     
        </div>

@@ -1,11 +1,9 @@
-function Pop(d){
-    return(
-        <>
-        <div>
-          <h1>{d.arg.id}</h1>
-          <button onClick={d.fun}>close</button>
-          </div>
-        </>
-    )
+const Pop=({fun,chi})=>{
+  return(
+    <>
+    <div>{console.log(chi)}</div>
+    <button onClick={fun}>close</button>
+    </>
+  )
 }
 export default Pop;
